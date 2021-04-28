@@ -149,12 +149,73 @@ namespace Editor_de_Grafos
 
         private void éÁrvoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            if(g.IsArvore(0) == true)
-                MessageBox.Show("É uma árvore", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            int inicio = 0;
+            Vertice v = g.getVerticeMarcado();
+            if (v != null)
+                inicio = v.getNum();
+
+            if (g.IsArvore(inicio) == true)
+               MessageBox.Show("É uma árvore", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Não é uma árvore", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               MessageBox.Show("Não é uma árvore", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
+        }
+
+        private void árvoreGeradoraMínimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int inicio = 0;
+            Vertice v = g.getVerticeMarcado();
+            if (v != null)
+                inicio = v.getNum();
+
+
+            int custoTotal = g.AGM(inicio);
+            MessageBox.Show("Custo total de: "+ custoTotal, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void númeroCromáticoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int inicio = 0;
+            Vertice v = g.getVerticeMarcado();
+            if (v != null)
+                inicio = v.getNum();
+
+
+            int custoTotal = g.numeroCromatico(inicio);
+            MessageBox.Show("X(G) é  igual a: " + custoTotal, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void caminhoMínimoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (destino.Text == "")
+            {
+                MessageBox.Show("Favor escrever o rótulo do vértice de destino na caixa de texto: ", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int fim = -1;
+                for (int i = 0; i < g.getN(); i++)
+                {
+                    if (destino.Text == g.getVertice(i).getRotulo())
+                    {
+                        fim = i;
+                    }
+                }
+                if (fim != -1)
+                {
+                    int inicio = 0;
+                    Vertice v = g.getVerticeMarcado();
+                    if (v != null)
+                        inicio = v.getNum();
+
+                    int custoTotal = g.caminhoMinimo(inicio, fim);
+                    MessageBox.Show("O custo do menor caminho é de: " + custoTotal, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Favor escrever um rótulo válido! ", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
     }
 }

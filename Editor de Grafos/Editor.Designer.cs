@@ -42,19 +42,24 @@ namespace Editor_de_Grafos
             this.BtGrafoEuleriano = new System.Windows.Forms.ToolStripMenuItem();
             this.BtGrafoUnicursal = new System.Windows.Forms.ToolStripMenuItem();
             this.BtParesOrd = new System.Windows.Forms.ToolStripMenuItem();
+            this.profundidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.larguraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.éÁrvoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.árvoreGeradoraMínimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caminhoMínimoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.númeroCromáticoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ferramentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BtPeso = new System.Windows.Forms.ToolStripMenuItem();
             this.BtPesoAleatorio = new System.Windows.Forms.ToolStripMenuItem();
             this.completarGrafoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BtSobre = new System.Windows.Forms.ToolStripMenuItem();
+            this.lIMPARGRAFOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OPFile = new System.Windows.Forms.OpenFileDialog();
             this.SVFile = new System.Windows.Forms.SaveFileDialog();
-            this.profundidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.larguraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.éÁrvoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lIMPARGRAFOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.g = new Editor_de_Grafos.Grafo();
+            this.destino = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,7 +135,10 @@ namespace Editor_de_Grafos
             this.BtParesOrd,
             this.profundidadeToolStripMenuItem,
             this.larguraToolStripMenuItem,
-            this.éÁrvoreToolStripMenuItem});
+            this.éÁrvoreToolStripMenuItem,
+            this.árvoreGeradoraMínimaToolStripMenuItem,
+            this.caminhoMínimoToolStripMenuItem,
+            this.númeroCromáticoToolStripMenuItem});
             this.algoritmosToolStripMenuItem.Name = "algoritmosToolStripMenuItem";
             this.algoritmosToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.algoritmosToolStripMenuItem.Text = "&Algoritmos";
@@ -138,23 +146,65 @@ namespace Editor_de_Grafos
             // BtGrafoEuleriano
             // 
             this.BtGrafoEuleriano.Name = "BtGrafoEuleriano";
-            this.BtGrafoEuleriano.Size = new System.Drawing.Size(180, 22);
+            this.BtGrafoEuleriano.Size = new System.Drawing.Size(203, 22);
             this.BtGrafoEuleriano.Text = "Grafo Euleriano";
             this.BtGrafoEuleriano.Click += new System.EventHandler(this.BtGrafoEuleriano_Click);
             // 
             // BtGrafoUnicursal
             // 
             this.BtGrafoUnicursal.Name = "BtGrafoUnicursal";
-            this.BtGrafoUnicursal.Size = new System.Drawing.Size(180, 22);
+            this.BtGrafoUnicursal.Size = new System.Drawing.Size(203, 22);
             this.BtGrafoUnicursal.Text = "Grafo Unicursal";
             this.BtGrafoUnicursal.Click += new System.EventHandler(this.BtGrafoUnicursal_Click);
             // 
             // BtParesOrd
             // 
             this.BtParesOrd.Name = "BtParesOrd";
-            this.BtParesOrd.Size = new System.Drawing.Size(180, 22);
+            this.BtParesOrd.Size = new System.Drawing.Size(203, 22);
             this.BtParesOrd.Text = "Pares Ordenados";
             this.BtParesOrd.Click += new System.EventHandler(this.BtParesOrd_Click);
+            // 
+            // profundidadeToolStripMenuItem
+            // 
+            this.profundidadeToolStripMenuItem.Name = "profundidadeToolStripMenuItem";
+            this.profundidadeToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.profundidadeToolStripMenuItem.Text = "Profundidade";
+            this.profundidadeToolStripMenuItem.Click += new System.EventHandler(this.profundidadeToolStripMenuItem_Click);
+            // 
+            // larguraToolStripMenuItem
+            // 
+            this.larguraToolStripMenuItem.Name = "larguraToolStripMenuItem";
+            this.larguraToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.larguraToolStripMenuItem.Text = "Largura";
+            this.larguraToolStripMenuItem.Click += new System.EventHandler(this.larguraToolStripMenuItem_Click);
+            // 
+            // éÁrvoreToolStripMenuItem
+            // 
+            this.éÁrvoreToolStripMenuItem.Name = "éÁrvoreToolStripMenuItem";
+            this.éÁrvoreToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.éÁrvoreToolStripMenuItem.Text = "É árvore";
+            this.éÁrvoreToolStripMenuItem.Click += new System.EventHandler(this.éÁrvoreToolStripMenuItem_Click);
+            // 
+            // árvoreGeradoraMínimaToolStripMenuItem
+            // 
+            this.árvoreGeradoraMínimaToolStripMenuItem.Name = "árvoreGeradoraMínimaToolStripMenuItem";
+            this.árvoreGeradoraMínimaToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.árvoreGeradoraMínimaToolStripMenuItem.Text = "Árvore geradora mínima";
+            this.árvoreGeradoraMínimaToolStripMenuItem.Click += new System.EventHandler(this.árvoreGeradoraMínimaToolStripMenuItem_Click);
+            // 
+            // caminhoMínimoToolStripMenuItem
+            // 
+            this.caminhoMínimoToolStripMenuItem.Name = "caminhoMínimoToolStripMenuItem";
+            this.caminhoMínimoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.caminhoMínimoToolStripMenuItem.Text = "Caminho mínimo";
+            this.caminhoMínimoToolStripMenuItem.Click += new System.EventHandler(this.caminhoMínimoToolStripMenuItem_Click);
+            // 
+            // númeroCromáticoToolStripMenuItem
+            // 
+            this.númeroCromáticoToolStripMenuItem.Name = "númeroCromáticoToolStripMenuItem";
+            this.númeroCromáticoToolStripMenuItem.Size = new System.Drawing.Size(203, 22);
+            this.númeroCromáticoToolStripMenuItem.Text = "Número cromático";
+            this.númeroCromáticoToolStripMenuItem.Click += new System.EventHandler(this.númeroCromáticoToolStripMenuItem_Click);
             // 
             // ferramentasToolStripMenuItem
             // 
@@ -204,6 +254,13 @@ namespace Editor_de_Grafos
             this.BtSobre.Text = "Sobre";
             this.BtSobre.Click += new System.EventHandler(this.BtSobre_Click);
             // 
+            // lIMPARGRAFOToolStripMenuItem
+            // 
+            this.lIMPARGRAFOToolStripMenuItem.Name = "lIMPARGRAFOToolStripMenuItem";
+            this.lIMPARGRAFOToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.lIMPARGRAFOToolStripMenuItem.Text = "LIMPAR GRAFO";
+            this.lIMPARGRAFOToolStripMenuItem.Click += new System.EventHandler(this.lIMPARGRAFOToolStripMenuItem_Click);
+            // 
             // OPFile
             // 
             this.OPFile.DefaultExt = "*.grf";
@@ -216,34 +273,6 @@ namespace Editor_de_Grafos
             this.SVFile.Filter = "Grafo Files|*.grf";
             this.SVFile.Title = "Defina local para salvar";
             // 
-            // profundidadeToolStripMenuItem
-            // 
-            this.profundidadeToolStripMenuItem.Name = "profundidadeToolStripMenuItem";
-            this.profundidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.profundidadeToolStripMenuItem.Text = "Profundidade";
-            this.profundidadeToolStripMenuItem.Click += new System.EventHandler(this.profundidadeToolStripMenuItem_Click);
-            // 
-            // larguraToolStripMenuItem
-            // 
-            this.larguraToolStripMenuItem.Name = "larguraToolStripMenuItem";
-            this.larguraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.larguraToolStripMenuItem.Text = "Largura";
-            this.larguraToolStripMenuItem.Click += new System.EventHandler(this.larguraToolStripMenuItem_Click);
-            // 
-            // éÁrvoreToolStripMenuItem
-            // 
-            this.éÁrvoreToolStripMenuItem.Name = "éÁrvoreToolStripMenuItem";
-            this.éÁrvoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.éÁrvoreToolStripMenuItem.Text = "É árvore";
-            this.éÁrvoreToolStripMenuItem.Click += new System.EventHandler(this.éÁrvoreToolStripMenuItem_Click);
-            // 
-            // lIMPARGRAFOToolStripMenuItem
-            // 
-            this.lIMPARGRAFOToolStripMenuItem.Name = "lIMPARGRAFOToolStripMenuItem";
-            this.lIMPARGRAFOToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
-            this.lIMPARGRAFOToolStripMenuItem.Text = "LIMPAR GRAFO";
-            this.lIMPARGRAFOToolStripMenuItem.Click += new System.EventHandler(this.lIMPARGRAFOToolStripMenuItem_Click);
-            // 
             // g
             // 
             this.g.AutoScroll = true;
@@ -253,12 +282,30 @@ namespace Editor_de_Grafos
             this.g.Size = new System.Drawing.Size(631, 401);
             this.g.TabIndex = 1;
             // 
+            // destino
+            // 
+            this.destino.Location = new System.Drawing.Point(563, 4);
+            this.destino.Name = "destino";
+            this.destino.Size = new System.Drawing.Size(56, 20);
+            this.destino.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(380, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Digite o rótulo do vértice de destino:";
+            // 
             // Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(631, 425);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.destino);
             this.Controls.Add(this.g);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -300,6 +347,11 @@ namespace Editor_de_Grafos
         private ToolStripMenuItem larguraToolStripMenuItem;
         private ToolStripMenuItem éÁrvoreToolStripMenuItem;
         private ToolStripMenuItem lIMPARGRAFOToolStripMenuItem;
+        private ToolStripMenuItem árvoreGeradoraMínimaToolStripMenuItem;
+        private ToolStripMenuItem caminhoMínimoToolStripMenuItem;
+        private ToolStripMenuItem númeroCromáticoToolStripMenuItem;
+        private TextBox destino;
+        private Label label1;
     }
 }
 

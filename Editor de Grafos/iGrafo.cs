@@ -12,8 +12,8 @@ namespace Editor_de_Grafos
         void completarGrafo();
         void profundidade(int v);
         void largura(int v);
-        void AGM(int v);
-        void caminhoMinimo(int i, int j);
-        void numeroCromatico();
+        int AGM(int v);
+        int caminhoMinimo(int i, int j);
+        int numeroCromatico(int v);
     }
 }
