@@ -82,20 +82,13 @@ namespace Editor_de_Grafos
                 int aux = 0;
                 for (int j = 0; j < getN(); j++)
                 {
-                    if (getAresta(i, j) != null)
-                    {
-                        aux++;
-                    }
-                }
-
-                if (aux == 0)
-                {
-                    for (int j = 0; j < getN(); j++)
+                    if (getAresta(i, j) == null && getAresta(j, i) == null && i != j)
                     {
                         setAresta(i, j, 1);
                         getAresta(i, j).setCor(Color.Black);
                     }
                 }
+                
             }
         }
 
